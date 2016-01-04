@@ -20,7 +20,18 @@
     tesss.frame = CGRectMake(0, 0, 300, 300);
     tesss.backgroundColor = [UIColor grayColor];
     [self.view addSubview:tesss];
-}
 
+    //设置阴影
+    NSShadow *shadow = [[NSShadow alloc]init];
+    shadow.shadowOffset = CGSizeMake(5, 5);
+    //阴影模糊度
+    shadow.shadowBlurRadius = 5.0;
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[NSShadowAttributeName] = shadow;
+    UILabel *ZYLabel = [[UILabel alloc]init];
+    ZYLabel.frame = CGRectMake(300, 0, 100, 100);
+    [self.view addSubview:ZYLabel];
+    ZYLabel.attributedText = [[NSAttributedString alloc]initWithString:@"xasdadadad" attributes:dictM];
+}
 
 @end
