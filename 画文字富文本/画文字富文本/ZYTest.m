@@ -15,13 +15,15 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    NSString *str = @"aaaaaaaaa";
+    NSString *str = @"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
     
     NSMutableDictionary *attributDic = [NSMutableDictionary dictionary];
     attributDic[NSForegroundColorAttributeName] = [UIColor redColor];
+    attributDic[NSFontAttributeName] = [UIFont systemFontOfSize:25];
     
-    
-    [str drawAtPoint:CGPointMake(0, 0) withAttributes:attributDic];
+    //区别
+//    [str drawAtPoint:CGPointMake(0, 0) withAttributes:attributDic];
+    [str drawInRect:rect withAttributes:attributDic];
 }
 
 
